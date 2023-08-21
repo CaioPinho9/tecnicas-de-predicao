@@ -1,7 +1,7 @@
 library(data.table)
 Base <- fread(input = paste0("Exercicio.csv"), header = T, na.strings = "NA", data.table = FALSE, dec=",")
 
-#Gráfico
+# Gráfico
 
 # Coeficiente de correlação
 
