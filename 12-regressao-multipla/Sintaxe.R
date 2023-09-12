@@ -4,3 +4,9 @@ names(Base)
 
 plot(Base)
 cor(Base)
+
+modelo = lm(Risco ~ Idade + Pressao, data = Base)
+summary(modelo)
+library(car)
+avPlots(modelo)
+plot(modelo)
