@@ -23,7 +23,7 @@ cor(Base$Frutas, Base$Gasto) # 0.1328795
 cor.test(Base$Carnes, Base$Gasto, conf.level = 0.95)$conf.int # [0.6841370 0.7873068]
 
 # Criação do modelo
-model = lm(Gasto ~ Carnes, data = Base) 
+model = lm(Gasto ~ Carnes, data = Base)
 summary(model) # Intercept  -92.581, Determinação 60.228
 # A cada kilograma a mais de carne é esperado que o gasto final aumente em R$60,22
 # O aumento da quantidade de carne explica 54.76% da variação dos Gastos
@@ -34,7 +34,7 @@ abline(lm(Gasto ~ Carnes, data = Base))
 
 # Análise de resíduos
 plot(fitted(model), rstandard(model)) # O gráfico de resíduos está aleatório mostrando que essa é uma relação linear
-abline(0, 0) 
+abline(0, 0)
 anova(model)
 
 # Análise do Sexo
@@ -56,7 +56,7 @@ plot(male_frame$Carnes, male_frame$Gasto)
 abline(model)
 
 # Criação do modelo
-model_ma = lm(Gasto ~ Carnes, data = male_frame) 
+model_ma = lm(Gasto ~ Carnes, data = male_frame)
 summary(model_ma) # Apenas 21% da variação dos gastos pode ser explicada pela quantidade de carne comprada por homens
 
 
@@ -68,7 +68,7 @@ abline(model)
 # A correlação é mais forte quando o sexo é feminino
 
 # Criação do modelo
-model_fe = lm(Gasto ~ Carnes, data = female_frame) 
+model_fe = lm(Gasto ~ Carnes, data = female_frame)
 summary(model_fe) # Intercept  -95.771, Determinação 61.905
 # A cada kilograma que uma mulher compre a mais de carne é esperado que o gasto final aumente em R$61,09
 # O aumento da quantidade carne comprado por uma mulher explica 57.53% da variação dos Gastos
@@ -79,5 +79,5 @@ abline(lm(Gasto ~ Carnes, data = female_frame))
 
 # Análise de resíduos
 plot(fitted(model_fe), rstandard(model_fe)) # O gráfico de resíduos está aleatório mostrando que essa é uma relação linear
-abline(0, 0) 
+abline(0, 0)
 anova(model_fe)
