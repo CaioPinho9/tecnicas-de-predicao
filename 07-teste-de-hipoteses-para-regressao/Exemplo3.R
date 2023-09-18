@@ -1,5 +1,5 @@
 library(data.table)
-Base <- fread(input = paste0("carros.csv"), header = T, na.strings = "NA", data.table = FALSE, dec=",")
+Base = fread(input = paste0("carros.csv"), header = T, na.strings = "NA", data.table = FALSE, dec=",")
 names(Base)
 
 plot(Base)

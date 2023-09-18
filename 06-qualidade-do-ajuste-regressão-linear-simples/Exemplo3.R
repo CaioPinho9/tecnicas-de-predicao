@@ -1,6 +1,6 @@
 library(data.table)
 library(ggplot2)
-Base <- fread(input = paste0("Exercicio.csv"), header = T, na.strings = "NA", data.table = FALSE, dec=",")
+Base = fread(input = paste0("Exercicio.csv"), header = T, na.strings = "NA", data.table = FALSE, dec=",")
 
 # Gráfico
 plot(Base$Cal_Ing, Base$Perda_Peso)

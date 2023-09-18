@@ -1,5 +1,5 @@
 library(data.table)
-Base <- fread(input = paste0("Exercicio.csv"), header = T, na.strings = "NA", data.table = FALSE, dec=",")
+Base = fread(input = paste0("Exercicio.csv"), header = T, na.strings = "NA", data.table = FALSE, dec=",")
 names(Base)
 m1 = lm(Perda_Peso ~ Ex_Aerob, data=Base)
 summary(m1)

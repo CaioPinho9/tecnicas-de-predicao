@@ -1,9 +1,9 @@
 library(data.table)
-dados <- fread(input = paste0("imc.csv"), header = T, na.strings = "NA", data.table = FALSE, dec = ",")
+dados = fread(input = paste0("imc.csv"), header = T, na.strings = "NA", data.table = FALSE, dec = ",")
 names(dados)
 cor(dados)
 # Modelo de Regressão Múltipla
-modelo <- lm(IMC ~ TR + SOMA_DC, data = dados)
+modelo = lm(IMC ~ TR + SOMA_DC, data = dados)
 summary(modelo)
 
 # Análise Gráfica da relação das variáveis independentes com a variável dependente
@@ -13,11 +13,11 @@ avPlots(modelo)
 
 # Importância de cada variável no modelo
 library(relaimpo)
-imp <- calc.relimp(modelo)
-var.exp <- data.frame(round(imp$lmg * 100, 1))
-colnames(var.exp) <- "imp.lmg"
-nome <- rownames(var.exp)
-var.exp <- data.frame(nome, var.exp)
+imp = calc.relimp(modelo)
+var.exp = data.frame(round(imp$lmg * 100, 1))
+colnames(var.exp) = "imp.lmg"
+nome = rownames(var.exp)
+var.exp = data.frame(nome, var.exp)
 
 library(ggplot2)
 ggplot(var.exp, aes(nome, imp.lmg)) +
