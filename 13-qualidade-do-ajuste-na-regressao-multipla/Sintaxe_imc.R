@@ -1,12 +1,14 @@
 library(data.table)
-dados <- fread(input = paste0("academia.csv"), header = T, na.strings = "NA", data.table = FALSE, dec = ",")
+dados <- fread(input = paste0("imc.csv"), header = T, na.strings = "NA", data.table = FALSE, dec = ",")
 names(dados)
+cor(dados)
 # Modelo de Regressão Múltipla
-modelo <- lm(Perda_Peso ~ Ex_Aerob + Cal_Ing, data = dados)
+modelo <- lm(IMC ~ TR + SOMA_DC, data = dados)
 summary(modelo)
 
 # Análise Gráfica da relação das variáveis independentes com a variável dependente
 library(car)
+vif(modelo)
 avPlots(modelo)
 
 # Importância de cada variável no modelo
@@ -29,4 +31,4 @@ library(car)
 qqPlot(modelo)
 
 library(rgl)
-plot3d(dados$Perda_Peso, dados$Cal_Ing, dados$Ex_Aerob, col = "blue", size = 2)
+plot3d(dados$IMC, dados$SOMA_DC, dados$TR, col = "blue", size = 2)

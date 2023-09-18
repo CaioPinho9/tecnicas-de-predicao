@@ -10,6 +10,5 @@ plot(fitted(modelo), rstandard(modelo))
 abline(0, 0)
 plot(modelo)
 
-install.packages("rgl")
 library(rgl)
 plot3d(Base$Risco, Base$Idade, Base$Pressao, col = "blue", size = 2)
