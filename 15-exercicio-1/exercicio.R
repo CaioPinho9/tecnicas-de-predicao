@@ -1,15 +1,15 @@
 # Carregando a base de dados
-dados <- read.csv("apartamento.csv", sep=";")
+dados = read.csv("apartamento.csv", sep=";")
 
 # Preparar o modelo regressão linear:
-modelo <- lm(Valor ~ Area + Idade + Energia + Local, data = dados)
+modelo = lm(Valor ~ Area + Idade + Energia + Local, data = dados)
 
 summary(modelo)
 
 ############### a)
 
 ## Retirar a variável "Energia", pois p-value>0.2;
-modelo <- lm(Valor ~ Area + Idade + Local, data = dados)
+modelo = lm(Valor ~ Area + Idade + Local, data = dados)
 
 summary(modelo)
 
