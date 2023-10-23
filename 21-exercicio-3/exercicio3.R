@@ -1,6 +1,6 @@
 # LEITURA DA BASE
 library(data.table)
-base <-
+base =
   fread(
     input = paste0("selecao.csv"),
     header = T,
